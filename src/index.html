@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>Mobile Start</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="build/main.css">
+</head>
+<body>
+
+	<!-- 加载Ionic根组件 -->
+	<ion-app></ion-app>
+
+	<!-- 高德地图API -->
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=3fe20cdb4d2c77b4892e665f7b8ee8cc"></script>
+
+	<!-- cordova.js是cordova apps必须的，在构建过程中生成 -->
+	<script src="cordova.js"></script>
+
+	<!-- 取消注释启用service worker
+	<script>
+	  if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('service-worker.js')
+		  .then(() => console.log('service worker installed'))
+		  .catch(err => console.log('Error', err));
+	  }
+	</script>-->
+
+	<!-- polyfills.js在构建过程中生成 -->
+	<script src="build/polyfills.js"></script>
+
+	<!-- vendor.js在构建过程中生成 -->
+	<script src="build/vendor.js"></script>
+
+	<!-- bundle.js在构建过程中生成 -->
+	<script src="build/main.js"></script>
+
+	<script>
+		// document.documentElement.style.fontSize = document.documentElement.clientWidth / 37.5 + "px";
+
+		// 在config.xml配置让splash一直显示，然后在进入页面后，通过代码控制splash消失
+		document.addEventListener("deviceready", function () {
+			navigator.splashscreen.hide();
+		}, false);
+	</script>
+
+</body>
+</html>

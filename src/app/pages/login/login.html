@@ -1,0 +1,37 @@
+<ion-content>
+	<div class="login-content">
+		<div class="logo">
+			<img src="assets/images/login/logo.png" width="50%">
+		</div>
+		<div class="formDiv">
+			<form novalidate #loginForm="ngForm" autocomplete="off">
+				<ion-list>
+					<ion-item>
+						<ion-label color="primary">
+							<ion-icon name="md-person"></ion-icon>
+						</ion-label>
+						<ion-input type="text"
+						           name="name"
+						           #username="ngModel"
+						           [(ngModel)]="user.username"
+						           required></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label color="primary">
+							<ion-icon name="md-lock"></ion-icon>
+						</ion-label>
+						<ion-input type="password"
+						           name="password"
+						           autocomplete="new-password"
+						           #password="ngModel"
+						           [(ngModel)]="user.password"
+						           required></ion-input>
+					</ion-item>
+				</ion-list>
+			</form>
+		</div>
+		<div class="loginBtnDiv">
+			<button ion-button full color="light" (click)="login(username.valid && password.valid)">登录</button>
+		</div>
+	</div>
+</ion-content>

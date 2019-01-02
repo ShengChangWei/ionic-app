@@ -1,0 +1,15 @@
+{
+	"name": "ionic-start",
+	"short_name": "ionic-start",
+	"start_url": "index.html",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "assets/images/login/logo.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"background_color": "#50C6F4",
+	"theme_color": "#50C6F4"
+}

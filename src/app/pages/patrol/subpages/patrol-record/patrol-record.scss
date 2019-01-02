@@ -1,0 +1,51 @@
+page-patrol-record {
+	ion-content {
+		.time {
+			color: #8e8e8e;
+		}
+
+		.begin-time {
+			color: #1d89da;
+			margin: 0.6rem 0;
+			font-weight: bold;
+		}
+
+		.end-time {
+			color: #fd1e7e;
+			font-weight: bold;
+		}
+
+		ion-card-content {
+			position: relative;
+
+			.record-title {
+				font-size: 18px;
+				margin-bottom: 10px;
+				font-weight: bold;
+
+				.problem-time {
+					padding-right: 10px;
+				}
+
+				.problem-num {
+					display: inline-block;
+					padding: 5px;
+					color: #fff;
+					background-color: #faa208;
+					border-radius: 15px;
+					font-size: 14px;
+					font-weight: normal;
+				}
+			}
+
+			.record-details-icon {
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				transform: translateY(-50%);
+				color: #8e8e8e;
+				font-size: 18px;
+			}
+		}
+	}
+}

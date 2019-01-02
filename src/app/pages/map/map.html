@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<button ion-button menuToggle>
+			<ion-icon name="contact"></ion-icon>
+		</button>
+		<ion-title>人脸对比</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<div class="picture">
+		<button ion-button small (click)="getPicture()">拍照</button>
+	</div>
+	<div *ngIf="pictures.length> 0">
+		<ng-container *ngFor="let pic of pictures">
+			<img [src]="pic.path" alt="照片">
+		</ng-container>
+	</div>
+	<div>{{result}}</div>
+	<canvas #canvas style="display: none;"></canvas>
+	<button ion-button small (click)="getFace()">对比脸型</button>
+
+</ion-content>

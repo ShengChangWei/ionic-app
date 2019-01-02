@@ -1,0 +1,108 @@
+<ion-header>
+	<ion-navbar color="dark">
+		<button ion-button menuToggle icon-only>
+			<ion-icon name='wode'></ion-icon>
+		</button>
+		<ion-buttons end>
+			<button type="button" ion-button>
+				历史巡查
+			</button>
+		</ion-buttons>
+		<ion-title>当前巡查</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class="curr-patrol-info" (click)="showPatrolRecord()">
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<div class="info-item">
+						<div>
+							<div class="info-item-num">
+								12<span>km</span>
+							</div>
+							<div class="info-item-text">
+								巡查里程
+							</div>
+						</div>
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="info-item">
+						<div>
+							<div class="info-item-num">
+								123<span>次</span>
+							</div>
+							<div class="info-item-text">
+								打卡次数
+							</div>
+						</div>
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="info-item">
+						<div>
+							<div class="info-item-num">
+								32321<span>h</span>
+							</div>
+							<div class="info-item-text">
+								巡查时长
+							</div>
+						</div>
+					</div>
+				</ion-col>
+				<ion-col>
+					<div class="info-item">
+						<div>
+							<div class="info-item-num" style="color: #dc5815;">
+								2012-12
+							</div>
+							<div class="info-item-text">
+								截至日期
+							</div>
+						</div>
+					</div>
+				</ion-col>
+				<ion-col col-1>
+					<div class="info-item">
+						<div>
+							<ion-icon name="arrow-forward"></ion-icon>
+						</div>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+	<div class="curr-patrol-problem-num"
+		 (click)="showProblemList()">
+		<div class="problem-title">
+			当前巡查上报问题<span>3</span>个&nbsp;&nbsp;
+			<ion-icon name="md-arrow-dropup"></ion-icon>
+		</div>
+	</div>
+
+	<div class="curr-patrol-problem-list"
+		 [style.height]="problemListHeight + 'px'" (pan)="showProblemList()">
+		<ul>
+			<li>
+				大家好
+			</li>
+		</ul>
+	</div>
+	<div class="to-patrol-btn active"  (click)="creatPatrol()">
+		<span>
+			新建巡查
+		</span>
+	</div>
+	<e-ngx-esrimap
+				   [mapType]="'tdt'"
+				   [mapUrl]="['img','cia']"
+				   [enableNavigation]="false"
+				   [initExtent]="config.mapArea"
+				   [gisApiUrl]="config.gisApiUrl"
+				   [geoUrl]="config.geoUrl"
+				   [esriCSSUrl]="config.esriCSSUrl"
+				   (mapReady)="onMapReady($event)">
+	</e-ngx-esrimap>
+</ion-content>
